@@ -1,0 +1,4 @@
+selenium>=3.14
+pytest-selenium
+Appium-Python-Client
+pytest
