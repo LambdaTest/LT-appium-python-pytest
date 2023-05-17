@@ -130,28 +130,30 @@ You can update your custom capabilities in test scripts. In this sample project,
 **iOS:**
 
 ```python title="iOS(.ipa)"
-    caps = {}
-    caps["deviceName"] = "iPhone 11"
-    caps["platformName"] = "iOS"
-    caps["platformVersion"] = "14"
-    caps["app"] = "lt://proverbial-ios"     #Enter the app (.ipa) url here
-    caps["isRealMobile"] = True
-    caps['build'] = build
-    caps['name'] = test_name
-    caps['project'] = project_name
+    caps = {
+      "deviceName": "iPhone 11",
+      "platformName": "iOS",
+      "platformVersion": "14",
+      "app": "lt://proverbial-ios"     # Enter the app (.ipa) URL here,
+      "isRealMobile": True,
+      "build": build,
+      "name": test_name,
+      "project": project_name
+    }
 ```
 **Android:**
 
 ```python title="Android(.apk)"
-    caps = {}
-    caps["deviceName"] = "Galaxy S21 5G"
-    caps["platformName"] = "Android"
-    caps["platformVersion"] = "11"
-    caps["app"] = "lt://proverbial-android"   #Enter the app (.apk) url here
-    caps["isRealMobile"] = True
-    caps['build'] = build
-    caps['name'] = test_name
-    caps['project'] = project_name
+    caps = {
+      "deviceName": "Galaxy S21 5G",
+      "platformName": "Android",
+      "platformVersion": "11",
+      "app": "lt://proverbial-android"     # Enter the app (.apk) URL here,
+      "isRealMobile": True,
+      "build": build,
+      "name": test_name,
+      "project": project_name
+    }
 ```
 
 **Info Note:**
