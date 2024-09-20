@@ -131,28 +131,32 @@ You can update your custom capabilities in test scripts. In this sample project,
 
 ```python title="iOS(.ipa)"
     caps = {
-      "deviceName": "iPhone 11",
-      "platformName": "iOS",
-      "platformVersion": "14",
-      "app": "lt://proverbial-ios"     # Enter the app (.ipa) URL here,
-      "isRealMobile": True,
-      "build": build,
-      "name": test_name,
-      "project": project_name
+        "lt:options": {
+	    	"w3c": True,
+	    	"platformName": "iOS",
+	    	"deviceName": "iPhone 11",
+	    	"platformVersion": "14",
+	    	"isRealMobile": True,
+        "app":"lt://proverbial-ios",   #Enter the app (.ipa) url here
+        "build":"iOS Pytest",
+        "name": "iOS Pytest"
+	}
     }
 ```
 **Android:**
 
 ```python title="Android(.apk)"
     caps = {
-      "deviceName": "Galaxy S21 5G",
-      "platformName": "Android",
-      "platformVersion": "11",
-      "app": "lt://proverbial-android"     # Enter the app (.apk) URL here,
-      "isRealMobile": True,
-      "build": build,
-      "name": test_name,
-      "project": project_name
+        "lt:options": {
+	    	"w3c": True,
+	    	"platformName": "Android",
+	    	"deviceName": "Galaxy S21 5G",
+	    	"platformVersion": "11",
+	    	"isRealMobile": True,
+        "app":"lt://APP1016036571726037024331456",   #Enter the app (.apk) url here
+        "build":"Android Pytest",
+        "name": "Android Pytest"
+	}
     }
 ```
 
@@ -174,13 +178,13 @@ pip install -r requirements.txt
 **Android:**
 
 ```bash
-pytest test.py
+pytest tests/test_android.py
 ```
 
 **IOS:**
 
 ```bash
-pytest test_ios.py
+pytest tests/test_ios.py
 ```
 
 **Info Note:**

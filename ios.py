@@ -1,22 +1,27 @@
 from os import environ
 import pytest
 from appium import webdriver
+from appium.options.common import AppiumOptions
 
 @pytest.fixture(scope='function')
 def test_setup_ios(request):
     test_name = request.node.name
     build = environ.get('BUILD', "Pytest IOS Sample")
-    caps = {}
-    caps["deviceName"] = "iPhone 11"
-    caps["platformName"] = "iOS"
-    caps["platformVersion"] = "14"
-    caps["app"] = "lt://proverbial-ios"     #Enter the app (.ipa) url here
-    caps["isRealMobile"] = True
-    caps['build'] = build
-    caps['name'] = test_name
-    caps['project'] = "IOS Pytest"
-    driver = webdriver.Remote("https://<username>:<accessKey>@mobile-hub.lambdatest.com/wd/hub", caps)   #Add LambdaTest username and accessKey here
-    request.cls.driver = driver
+
+    caps = {
+        "lt:options": {
+		"w3c": True,
+		"platformName": "iOS",
+		"deviceName": "iPhone.*",
+		"platformVersion": "14",
+		"isRealMobile": True,
+        "app":"lt://proverbial-ios",   #Enter the app (.ipa) url here
+        "build":"iOS Pytest"
+	}
+    }
+
+    driver = webdriver.Remote("https://<username>:<accessKey>@mobile-hub.lambdatest.com/wd/hub",
+            options=AppiumOptions().load_capabilities(caps))
     
     yield driver
     
@@ -39,4 +44,3 @@ def pytest_runtest_makereport(item, call):
     # set an report attribute for each phase of a call, which can
     # be "setup", "call", "teardown"
     setattr(item, "rep_" + rep.when, rep)
-
