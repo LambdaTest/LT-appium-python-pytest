@@ -1,5 +1,4 @@
 import pytest
-from ios import test_setup_ios
 from selenium.webdriver.common.by import By
 
 @pytest.mark.usefixtures('test_setup_ios')
