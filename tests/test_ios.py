@@ -9,5 +9,5 @@ class TestLink:
         el1.click()
         
     def test_2(self):
-        el2 = self.driver.find_element(By.ID, "colour")
+        el2 = self.driver.find_element(By.ID, "color")
         el2.click()

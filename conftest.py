@@ -22,7 +22,7 @@ def test_setup_android(request):
 		"w3c": True,
 		"platformName": "Android",
 		"deviceName": "Galaxy.*",
-		"platformVersion": "11",
+		"platformVersion": "15",
 		"isRealMobile": True,
         "app":"lt://proverbial-android",   #Enter the app (.apk) url here
         "build":"Android Pytest"
