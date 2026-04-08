@@ -9,7 +9,7 @@ class TestLink:
         el1.click()
         
     def test_2(self):
-        el2 = self.driver.find_element(By.ID, "com.lambdatest.proverbial:id/colour")
+        el2 = self.driver.find_element(By.XPATH, '//*[@resource-id="com.lambdatest.proverbial:id/color"]')
         el2.click()
     
 

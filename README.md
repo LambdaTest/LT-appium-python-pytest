@@ -153,7 +153,7 @@ You can update your custom capabilities in test scripts. In this sample project,
 	    	"deviceName": "Galaxy S21 5G",
 	    	"platformVersion": "11",
 	    	"isRealMobile": True,
-        "app":"lt://APP1016036571726037024331456",   #Enter the app (.apk) url here
+        "app":"lt://proverbial-android",   #Enter the app (.apk) url here
         "build":"Android Pytest",
         "name": "Android Pytest"
 	}
