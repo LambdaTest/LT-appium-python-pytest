@@ -1,0 +1,26 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  # These link to the secret variables you will create in the ADO UI
+  LT_USERNAME: $(LT_USERNAME)
+  LT_ACCESS_KEY: $(LT_ACCESS_KEY)
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.9'
+  displayName: 'Install Python 3.9'
+
+- script: |
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+  displayName: 'Install Dependencies'
+
+- script: |
+    # This command runs your Appium tests via Pytest
+    pytest tests/
+  displayName: 'Run LambdaTest Appium Tests'
